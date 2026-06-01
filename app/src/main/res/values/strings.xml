@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">Login</string>
+    <string name="welcome">Welcome</string>
+    <string name="lbl_username">Username</string>
+    <string name="lbl_password">Password</string>
+    <string name="hint_username">Enter your username</string>
+    <string name="hint_password">Enter your password</string>
+    <string name="btn_login">Log In</string>
+    <string name="btn_register">Register</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="lbl_fullname">Full Name</string>
+    <string name="hint_fullname">Enter your full name</string>
+    <string name="lbl_email">Email</string>
+    <string name="hint_email">Enter your email</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_account">Already have an account?</string>
+    <string name="back_login">Back to Login</string>
+    <string name="language">Language</string>
+    <string name="fill_all_info">Please fill in all information</string>
+    <string name="register_success">Register successfully!</string>
+    <string name="username_exists">Username already exists</string>
+    <string name="login_failed">Wrong username or password</string>
+    <string name="logout">Log out</string>
+
+    <string name="my_library">My Library</string>
+    <string name="hello_user">Hello, %1$s!</string>
+    <string name="search_content">Search content...</string>
+    <string name="content_count">%1$d contents</string>
+
+    <string name="all">All</string>
+    <string name="audiobook">Audiobook</string>
+    <string name="podcast">Podcast</string>
+    <string name="meditation">Meditation</string>
+    <string name="book_summary">Book Summary</string>
+    <string name="favorite">Favorite</string>
+    <string name="offline">Offline</string>
+
+    <string name="filter_content">Filter content</string>
+    <string name="add_content">Add content</string>
+    <string name="edit_content">Edit content</string>
+    <string name="delete_content">Delete content</string>
+    <string name="delete_confirm">Are you sure you want to delete %1$s?</string>
+
+    <string name="content_title">Content title</string>
+    <string name="content_author">Author / Creator</string>
+    <string name="content_genre">Genre</string>
+    <string name="content_year">Year</string>
+    <string name="content_type">Type: Audiobook / Podcast / Meditation / Book Summary</string>
+    <string name="content_topic">Topic</string>
+    <string name="content_duration">Duration in seconds</string>
+
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+
+    <string name="added_content">Content added</string>
+    <string name="updated_content">Content updated</string>
+    <string name="deleted_content">Content deleted</string>
+
+    <string name="added_favorite">Added to favorites</string>
+    <string name="removed_favorite">Removed from favorites</string>
+    <string name="downloaded_offline">Downloaded for offline listening</string>
+    <string name="removed_offline">Removed from offline</string>
+
+    <string name="now_playing">Now playing: %1$s\nProgress: %2$s</string>
+    <string name="fonos_playing">Fonos is playing</string>
+    <string name="playing_content">%1$s: %2$s</string>
+</resources>

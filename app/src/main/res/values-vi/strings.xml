@@ -1,0 +1,70 @@
+<resources>
+    <string name="app_name">Đăng Nhập</string>
+    <string name="welcome">Chào mừng</string>
+    <string name="lbl_username">Tên đăng nhập</string>
+    <string name="lbl_password">Mật khẩu</string>
+    <string name="hint_username">Nhập tên đăng nhập</string>
+    <string name="hint_password">Nhập mật khẩu</string>
+    <string name="btn_login">Đăng Nhập</string>
+    <string name="btn_register">Đăng Ký</string>
+    <string name="forgot_password">Quên mật khẩu?</string>
+    <string name="no_account">Chưa có tài khoản?</string>
+    <string name="lbl_fullname">Họ và Tên</string>
+    <string name="hint_fullname">Nhập họ và tên</string>
+    <string name="lbl_email">Email</string>
+    <string name="hint_email">Nhập địa chỉ email</string>
+    <string name="create_account">Tạo Tài Khoản</string>
+    <string name="already_account">Đã có tài khoản?</string>
+    <string name="back_login">Quay lại đăng nhập</string>
+    <string name="language">Ngôn ngữ</string>
+
+    <string name="fill_all_info">Vui lòng nhập đầy đủ thông tin</string>
+    <string name="register_success">Đăng ký thành công!</string>
+    <string name="username_exists">Tên đăng nhập đã tồn tại</string>
+    <string name="login_failed">Sai tài khoản hoặc mật khẩu</string>
+    <string name="logout">Đăng xuất</string>
+
+    <string name="my_library">Thư viện của tôi</string>
+    <string name="hello_user">Xin chào, %1$s!</string>
+    <string name="search_content">Tìm kiếm nội dung...</string>
+    <string name="content_count">%1$d nội dung</string>
+
+    <string name="all">Tất cả</string>
+    <string name="audiobook">Sách nói</string>
+    <string name="podcast">Podcast</string>
+    <string name="meditation">Thiền định</string>
+    <string name="book_summary">Tóm tắt sách</string>
+    <string name="favorite">Yêu thích</string>
+    <string name="offline">Offline</string>
+
+    <string name="filter_content">Lọc nội dung</string>
+    <string name="add_content">Thêm nội dung</string>
+    <string name="edit_content">Sửa nội dung</string>
+    <string name="delete_content">Xóa nội dung</string>
+    <string name="delete_confirm">Bạn có chắc muốn xóa %1$s?</string>
+
+    <string name="content_title">Tên nội dung</string>
+    <string name="content_author">Tác giả / Người tạo</string>
+    <string name="content_genre">Thể loại</string>
+    <string name="content_year">Năm</string>
+    <string name="content_type">Loại: Audiobook / Podcast / Meditation / Book Summary</string>
+    <string name="content_topic">Chủ đề</string>
+    <string name="content_duration">Thời lượng giây</string>
+
+    <string name="save">Lưu</string>
+    <string name="cancel">Hủy</string>
+    <string name="delete">Xóa</string>
+
+    <string name="added_content">Đã thêm nội dung</string>
+    <string name="updated_content">Đã cập nhật nội dung</string>
+    <string name="deleted_content">Đã xóa nội dung</string>
+
+    <string name="added_favorite">Đã thêm vào yêu thích</string>
+    <string name="removed_favorite">Đã bỏ yêu thích</string>
+    <string name="downloaded_offline">Đã tải để nghe offline</string>
+    <string name="removed_offline">Đã xóa khỏi offline</string>
+
+    <string name="now_playing">Đang nghe: %1$s\nTiến độ: %2$s</string>
+    <string name="fonos_playing">Fonos đang phát</string>
+    <string name="playing_content">%1$s: %2$s</string>
+</resources>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_galaxy_pure"> <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="end"
+    android:layout_marginBottom="16dp">
+    <Button
+        android:id="@+id/btnVietnamese"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="VI"
+        android:textSize="12sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#40FFFFFF"
+        style="@style/Widget.AppCompat.Button.Borderless"/>
+    <Button
+        android:id="@+id/btnEnglish"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:text="EN"
+        android:textSize="12sp"
+        android:textColor="#88A0B5"
+        android:backgroundTint="#1AFFFFFF"
+        style="@style/Widget.AppCompat.Button.Borderless"/>
+</LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="32dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_username"
+        android:textSize="13sp"
+        android:textColor="#B0BEC5"
+        android:layout_marginBottom="4dp"/>
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/hint_username"
+        android:background="@drawable/input_bg"
+        android:backgroundTint="#26FFFFFF" android:textColor="#FFFFFF"
+        android:textColorHint="#78909C"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:inputType="text"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_password"
+        android:textSize="13sp"
+        android:textColor="#B0BEC5"
+        android:layout_marginBottom="4dp"/>
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="@string/hint_password"
+        android:background="@drawable/input_bg"
+        android:backgroundTint="#26FFFFFF" android:textColor="#FFFFFF"
+        android:textColorHint="#78909C"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:inputType="textPassword"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/tvForgot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        android:textColor="#4DB8FF"
+        android:textSize="12sp"
+        android:layout_gravity="end"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/btn_login"
+        android:backgroundTint="#1A4A7A"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_marginBottom="24dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_account"
+            android:textSize="13sp"
+            android:textColor="#90A4AE"/>
+        <TextView
+            android:id="@+id/tvGoRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/btn_register"
+            android:textSize="13sp"
+            android:textColor="#4DB8FF"
+            android:textStyle="bold"
+            android:paddingStart="4dp"/>
+    </LinearLayout>
+
+</LinearLayout>
