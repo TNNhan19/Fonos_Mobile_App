@@ -1,166 +1,343 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootHome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F5F5F0">
+    android:background="@drawable/bg_galaxy_pure"
+    android:fitsSystemWindows="true">
 
-    <!-- Top bar -->
-    <LinearLayout
+    <ScrollView
+        android:id="@+id/homeScrollView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingTop="16dp"
-        android:paddingBottom="8dp"
-        android:gravity="center_vertical">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:descendantFocusability="beforeDescendants">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="48dp"
+            android:paddingBottom="32dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- ── Header bar ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/my_library"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textColor="#1A1A2E"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:gravity="center"
+                    android:background="@drawable/chip_active"
+                    android:text="♪"
+                    android:textColor="#FFFFFF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="  Fonos"
+                    android:textColor="#38C7FF"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="🔔"
+                    android:textSize="21sp" />
+
+                <TextView
+                    android:id="@+id/btnLogout"
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:gravity="center"
+                    android:text="👤"
+                    android:textSize="21sp"
+                    android:clickable="true"
+                    android:focusable="true" />
+
+            </LinearLayout>
+
+            <!-- ── Greeting ── -->
             <TextView
                 android:id="@+id/tvGreeting"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/welcome"
-                android:textSize="12sp"
-                android:textColor="#888888"/>
+                android:text="Hello, bạn! 👋"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hôm nay bạn muốn nghe gì?"
+                android:textColor="#AAB3C5"
+                android:textSize="16sp"
+                android:layout_marginTop="6dp" />
+
+            <!-- ── Hero Banner ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:orientation="vertical"
+                android:background="@drawable/hero_banner_bg"
+                android:layout_marginTop="26dp"
+                android:padding="24dp"
+                android:gravity="bottom">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🎧"
+                    android:textSize="52sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Khám phá thế giới\nsách nói &amp; podcast"
+                    android:textColor="#FFFFFF"
+                    android:textSize="21sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Hàng nghìn nội dung âm thanh chất lượng cao"
+                    android:textColor="#B0C4DE"
+                    android:textSize="13sp"
+                    android:layout_marginTop="5dp" />
+
+            </LinearLayout>
+
+            <!-- ── Section title ── -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Khám phá theo danh mục"
+                android:textColor="#FFFFFF"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_marginTop="30dp" />
+
+            <!-- ── 3 Category cards ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="14dp">
+
+                <!-- Sách nói -->
+                <LinearLayout
+                    android:id="@+id/cardAudiobook"
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/category_card_audiobook"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📚"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sách nói"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+                <!-- Podcast -->
+                <LinearLayout
+                    android:id="@+id/cardPodcast"
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="10dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/category_card_podcast"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🎙️"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Podcast"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+                <!-- Thiền định -->
+                <LinearLayout
+                    android:id="@+id/cardMeditation"
+                    android:layout_width="0dp"
+                    android:layout_height="110dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/category_card_meditation"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🧘"
+                        android:textSize="34sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Thiền định"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ── Daily tip card ── -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/wide_card_bg"
+                android:layout_marginTop="26dp"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✨  Hôm nay nên nghe gì?"
+                    android:textColor="#FFFFFF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bắt đầu ngày mới với một podcast truyền cảm hứng hoặc tóm tắt sách 10 phút — nhỏ nhưng đủ tạo ra sự khác biệt lớn."
+                    android:textColor="#AAB3C5"
+                    android:textSize="13sp"
+                    android:layout_marginTop="10dp"
+                    android:lineSpacingMultiplier="1.6" />
+
+            </LinearLayout>
+
+            <!-- ── CTA Button ── -->
+            <Button
+                android:id="@+id/btnExplore"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Khám phá ngay  →"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:background="@drawable/cta_button_bg"
+                android:layout_marginTop="26dp"
+                android:stateListAnimator="@null" />
+
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/btnLogout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/logout"
-            android:textSize="12sp"
-            android:textColor="#667EEA"
-            android:padding="8dp"/>
-    </LinearLayout>
+    </ScrollView>
 
-    <!-- Search bar -->
+    <!-- ── Bottom Navigation (4 tabs) ── -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="74dp"
         android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="8dp"
-        android:gravity="center_vertical">
-
-        <EditText
-            android:id="@+id/etSearch"
-            android:layout_width="0dp"
-            android:layout_height="44dp"
-            android:layout_weight="1"
-            android:hint="@string/search_content"
-            android:background="@drawable/input_bg"
-            android:paddingStart="14dp"
-            android:paddingEnd="14dp"
-            android:inputType="text"
-            android:imeOptions="actionSearch"/>
-
-        <Button
-            android:id="@+id/btnFilter"
-            android:layout_width="44dp"
-            android:layout_height="44dp"
-            android:layout_marginStart="8dp"
-            android:text="☰"
-            android:textSize="16sp"
-            android:backgroundTint="#667EEA"
-            android:textColor="#FFFFFF"
-            android:padding="0dp"/>
-    </LinearLayout>
-
-    <!-- Genre chips -->
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scrollbars="none"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
+        android:gravity="center"
+        android:background="@drawable/bottom_nav_bg"
+        android:paddingTop="8dp"
         android:paddingBottom="8dp">
 
-        <LinearLayout
-            android:id="@+id/chipGroup"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center_vertical"/>
-    </HorizontalScrollView>
-
-    <!-- Count + View toggle -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="8dp"
-        android:gravity="center_vertical">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="⌂&#10;Trang chủ"
+            android:textColor="#1E88FF"
+            android:textSize="12sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvCount"
+            android:id="@+id/navExplore"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="@string/content_count"
+            android:gravity="center"
+            android:text="◉&#10;Khám phá"
+            android:textColor="#AAB3C5"
             android:textSize="12sp"
-            android:textColor="#888888"/>
+            android:clickable="true"
+            android:focusable="true" />
 
-        <Button
-            android:id="@+id/btnGrid"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:text="⊞"
-            android:textSize="16sp"
-            android:padding="0dp"
-            android:backgroundTint="#667EEA"
-            android:textColor="#FFFFFF"/>
+        <TextView
+            android:id="@+id/navLibrary"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="▥&#10;Thư viện"
+            android:textColor="#AAB3C5"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:focusable="true" />
 
-        <Button
-            android:id="@+id/btnList"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginStart="6dp"
-            android:text="☰"
-            android:textSize="16sp"
-            android:padding="0dp"
-            android:backgroundTint="#E8E8E0"
-            android:textColor="#666666"/>
+        <TextView
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="♙&#10;Cá nhân"
+            android:textColor="#AAB3C5"
+            android:textSize="12sp"
+            android:clickable="true"
+            android:focusable="true" />
+
     </LinearLayout>
-
-    <!-- RecyclerView -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:paddingStart="16dp"
-        android:paddingEnd="16dp"
-        android:paddingBottom="80dp"
-        android:clipToPadding="false"/>
-
-    <!-- FAB -->
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#667EEA"
-        xmlns:app="http://schemas.android.com/apk/res-auto"/>
 
 </LinearLayout>

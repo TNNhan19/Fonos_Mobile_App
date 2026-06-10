@@ -2,4 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="galaxy_bg">#050B1E</color>
+    <color name="galaxy_card">#0B1633</color>
+    <color name="galaxy_card_2">#111D3D</color>
+    <color name="galaxy_blue">#1E88FF</color>
+    <color name="galaxy_cyan">#38C7FF</color>
+    <color name="text_white">#FFFFFF</color>
+    <color name="text_gray">#AAB3C5</color>
+    <color name="line_blue">#223B6D</color>
 </resources>

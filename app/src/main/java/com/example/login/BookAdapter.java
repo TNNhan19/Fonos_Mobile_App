@@ -60,7 +60,9 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
     @Override
     public void onBindViewHolder(@NonNull BookViewHolder holder, int position) {
         Book book = books.get(position);
-
+        if (holder.tvCover != null) {
+            holder.tvCover.setText(makeCoverText(book.getTitle()));
+        }
         holder.tvTitle.setText(book.getTitle());
         holder.tvAuthor.setText(book.getAuthor() + " · " + book.getYear());
         holder.tvGenre.setText(book.getType() + " · " + book.getGenre());
@@ -103,13 +105,38 @@ public class BookAdapter extends RecyclerView.Adapter<BookAdapter.BookViewHolder
         return books.size();
     }
 
+    private String makeCoverText(String title) {
+        if (title == null || title.trim().isEmpty()) {
+            return "BOOK";
+        }
+
+        String[] words = title.trim().split("\\s+");
+
+        if (words.length == 1) {
+            return words[0].toUpperCase();
+        }
+
+        StringBuilder builder = new StringBuilder();
+
+        for (int i = 0; i < Math.min(words.length, 3); i++) {
+            builder.append(words[i].toUpperCase());
+
+            if (i < Math.min(words.length, 3) - 1) {
+                builder.append("\n");
+            }
+        }
+
+        return builder.toString();
+    }
+
     static class BookViewHolder extends RecyclerView.ViewHolder {
-        TextView tvTitle, tvAuthor, tvGenre;
+        TextView tvCover, tvTitle, tvAuthor, tvGenre;
         TextView btnPlay, btnFavorite, btnDownload, btnEdit, btnDelete;
 
         BookViewHolder(View v) {
             super(v);
 
+            tvCover = v.findViewById(R.id.tvCover);
             tvTitle = v.findViewById(R.id.tvTitle);
             tvAuthor = v.findViewById(R.id.tvAuthor);
             tvGenre = v.findViewById(R.id.tvGenre);

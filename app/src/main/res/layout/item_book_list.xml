@@ -1,110 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="190dp"
+    android:layout_height="90dp"
     android:orientation="horizontal"
-    android:background="#FFFFFF"
+    android:gravity="center_vertical"
+    android:layout_marginEnd="12dp"
     android:padding="12dp"
-    android:gravity="center_vertical">
+    android:background="@drawable/wide_card_bg">
 
-    <LinearLayout
-        android:layout_width="48dp"
-        android:layout_height="64dp"
-        android:background="#E6F1FB"
+    <TextView
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         android:gravity="center"
-        android:layout_marginEnd="12dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="📖"
-            android:textSize="24sp"/>
-    </LinearLayout>
+        android:text="🎧"
+        android:textSize="26sp"
+        android:background="@drawable/chip_inactive" />
 
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginStart="12dp">
 
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tên sách"
-            android:textSize="13sp"
+            android:text="Tóm tắt sách"
+            android:textColor="#FFFFFF"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="#1A1A2E"/>
+            android:maxLines="1" />
 
         <TextView
             android:id="@+id/tvAuthor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tác giả · Năm"
-            android:textSize="11sp"
-            android:textColor="#888888"
-            android:layout_marginTop="2dp"/>
+            android:text="trong 15 phút"
+            android:textColor="#AAB3C5"
+            android:textSize="12sp"
+            android:maxLines="1" />
 
         <TextView
             android:id="@+id/tvGenre"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Thể loại"
-            android:textSize="10sp"
-            android:textColor="#185FA5"
-            android:background="#E6F1FB"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:paddingTop="3dp"
-            android:paddingBottom="3dp"
-            android:layout_marginTop="6dp"/>
+            android:text="Podcast"
+            android:textColor="#38C7FF"
+            android:textSize="12sp"
+            android:maxLines="1" />
+
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="8dp">
+    <TextView
+        android:id="@+id/btnPlay"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:text="▶"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:background="@drawable/chip_active" />
 
-        <TextView
-            android:id="@+id/btnPlay"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:text="▶️"
-            android:textSize="16sp"
-            android:gravity="center"/>
+    <TextView
+        android:id="@+id/btnFavorite"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:text="Favorite" />
 
-        <TextView
-            android:id="@+id/btnFavorite"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:text="♡"
-            android:textSize="18sp"
-            android:gravity="center"/>
+    <TextView
+        android:id="@+id/btnDownload"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:text="Download" />
 
-        <TextView
-            android:id="@+id/btnDownload"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:text="⬇️"
-            android:textSize="16sp"
-            android:gravity="center"/>
+    <TextView
+        android:id="@+id/btnEdit"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:text="Edit" />
 
-        <TextView
-            android:id="@+id/btnEdit"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:text="✏️"
-            android:textSize="16sp"
-            android:gravity="center"/>
-
-        <TextView
-            android:id="@+id/btnDelete"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:text="🗑️"
-            android:textSize="16sp"
-            android:gravity="center"/>
-    </LinearLayout>
+    <TextView
+        android:id="@+id/btnDelete"
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:text="Delete" />
 
 </LinearLayout>

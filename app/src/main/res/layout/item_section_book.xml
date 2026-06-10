@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="118dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginEnd="14dp">
+
+    <TextView
+        android:id="@+id/tvCover"
+        android:layout_width="118dp"
+        android:layout_height="145dp"
+        android:gravity="center"
+        android:background="@drawable/book_cover_bg"
+        android:text="BOOK"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:padding="10dp" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên sách"
+        android:textColor="#FFFFFF"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:maxLines="2"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tvAuthor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tác giả"
+        android:textColor="#AAB3C5"
+        android:textSize="12sp"
+        android:maxLines="1" />
+
+    <TextView
+        android:id="@+id/tvMeta"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="★ 4.8"
+        android:textColor="#38C7FF"
+        android:textSize="12sp"
+        android:layout_marginTop="2dp" />
+
+</LinearLayout>

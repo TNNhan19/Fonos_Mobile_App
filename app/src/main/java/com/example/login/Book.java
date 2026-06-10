@@ -6,13 +6,17 @@ public class Book {
     private String author;
     private String genre;
     private int year;
-
     private String type;
     private String topic;
     private int duration;
     private int progress;
     private boolean favorite;
     private boolean downloaded;
+    private double rating;
+
+    private String description;
+    private String coverUrl;
+    private String audioUrl;
 
     public Book(int id, String title, String author, String genre, int year) {
         this(id, title, author, genre, year, "Audiobook", "General", 3600, 0, false, false);
@@ -32,6 +36,24 @@ public class Book {
         this.progress = progress;
         this.favorite = favorite;
         this.downloaded = downloaded;
+        this.rating = 0.0;
+    }
+
+    public Book(int id, String title, String author, String genre, int year,
+                String type, String topic, int duration, int progress,
+                boolean favorite, boolean downloaded, double rating) {
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.year = year;
+        this.type = type;
+        this.topic = topic;
+        this.duration = duration;
+        this.progress = progress;
+        this.favorite = favorite;
+        this.downloaded = downloaded;
+        this.rating = rating;
     }
 
     public int getId() { return id; }
@@ -46,6 +68,14 @@ public class Book {
     public boolean isFavorite() { return favorite; }
     public boolean isDownloaded() { return downloaded; }
 
+    public double getRating() {
+        return rating;
+    }
+
+    public void setRating(double rating) {
+        this.rating = rating;
+    }
+
     public void setTitle(String title) { this.title = title; }
     public void setAuthor(String author) { this.author = author; }
     public void setGenre(String genre) { this.genre = genre; }
@@ -56,4 +86,29 @@ public class Book {
     public void setProgress(int progress) { this.progress = progress; }
     public void setFavorite(boolean favorite) { this.favorite = favorite; }
     public void setDownloaded(boolean downloaded) { this.downloaded = downloaded; }
+
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getCoverUrl() {
+        return coverUrl;
+    }
+
+    public void setCoverUrl(String coverUrl) {
+        this.coverUrl = coverUrl;
+    }
+
+    public String getAudioUrl() {
+        return audioUrl;
+    }
+
+    public void setAudioUrl(String audioUrl) {
+        this.audioUrl = audioUrl;
+    }
 }
