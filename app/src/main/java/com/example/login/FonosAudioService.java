@@ -1,78 +1,73 @@
 package com.example.login;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
-import android.app.NotificationManager;
-import android.app.Service;
 import android.content.Intent;
-import android.os.Build;
-import android.os.IBinder;
 import androidx.annotation.Nullable;
-import androidx.core.app.NotificationCompat;
+import androidx.media3.common.AudioAttributes;
+import androidx.media3.common.MediaItem;
+import androidx.media3.common.MediaMetadata;
+import androidx.media3.exoplayer.ExoPlayer;
+import androidx.media3.session.MediaSession;
+import androidx.media3.session.MediaSessionService;
 
-public class FonosAudioService extends Service {
+public class FonosAudioService extends MediaSessionService {
 
-    public static final String ACTION_START = "START";
-    public static final String ACTION_STOP = "STOP";
-
-    private static final String CHANNEL_ID = "fonos_audio_channel";
+    private ExoPlayer player;
+    private MediaSession mediaSession;
 
     @Override
     public void onCreate() {
         super.onCreate();
-        createNotificationChannel();
+
+        // 1. Khởi tạo ExoPlayer
+        player = new ExoPlayer.Builder(this)
+                .setAudioAttributes(AudioAttributes.DEFAULT,  true)
+                .setHandleAudioBecomingNoisy(true)
+                .build();
+
+        // 2. Khởi tạo MediaSession
+        mediaSession = new MediaSession.Builder(this, player).build();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        if (intent != null && ACTION_STOP.equals(intent.getAction())) {
-            stopForeground(true);
-            stopSelf();
-            return START_NOT_STICKY;
+        if (intent != null && intent.hasExtra("audio_url")) {
+            String url = intent.getStringExtra("audio_url");
+            String title = intent.getStringExtra("title");
+            String author = intent.getStringExtra("author");
+
+            MediaMetadata metadata = new MediaMetadata.Builder()
+                    .setTitle(title)
+                    .setArtist(author)
+                    .build();
+
+            MediaItem mediaItem = new MediaItem.Builder()
+                    .setUri(url)
+                    .setMediaMetadata(metadata)
+                    .build();
+
+            player.setMediaItem(mediaItem);
+            player.prepare();
+            player.play();
         }
-
-        String title = "Fonos";
-        String type = "Audiobook";
-
-        if (intent != null) {
-            title = intent.getStringExtra("title") != null
-                    ? intent.getStringExtra("title")
-                    : "Fonos";
-
-            type = intent.getStringExtra("type") != null
-                    ? intent.getStringExtra("type")
-                    : "Audiobook";
-        }
-
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle(getString(R.string.fonos_playing))
-                .setContentText(getString(R.string.playing_content, type, title))
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setPriority(NotificationCompat.PRIORITY_LOW)
-                .setOngoing(true)
-                .build();
-
-        startForeground(1, notification);
-
-        return START_STICKY;
-    }
-
-    private void createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            NotificationChannel channel = new NotificationChannel(
-                    CHANNEL_ID,
-                    "Fonos Audio Service",
-                    NotificationManager.IMPORTANCE_LOW
-            );
-
-            NotificationManager manager = getSystemService(NotificationManager.class);
-            manager.createNotificationChannel(channel);
-        }
+        return super.onStartCommand(intent, flags, startId);
     }
 
     @Nullable
     @Override
-    public IBinder onBind(Intent intent) {
-        return null;
+    public MediaSession onGetSession(MediaSession.ControllerInfo controllerInfo) {
+        return mediaSession;
+    }
+
+    @Override
+    public void onDestroy() {
+        if (player != null) {
+            player.release();
+            player = null;
+        }
+        if (mediaSession != null) {
+            mediaSession.release();
+            mediaSession = null;
+        }
+        super.onDestroy();
     }
 }

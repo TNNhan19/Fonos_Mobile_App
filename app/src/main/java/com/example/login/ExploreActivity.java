@@ -410,24 +410,23 @@ public class ExploreActivity extends AppCompatActivity {
     }
 
     private void playContent(Book book) {
-        int newProg = Math.min(book.getProgress() + 60, book.getDuration());
-        if (newProg >= book.getDuration()) newProg = 0;
-        final int fp = newProg;
-        supabaseBookService.updateProgress(book.getId(), fp, new SupabaseBookService.UpdateCallback() {
-            @Override
-            public void onSuccess() {
-                book.setProgress(fp);
-                Toast.makeText(ExploreActivity.this,
-                        "Đang phát: " + book.getTitle() + " | " + fmt(fp),
-                        Toast.LENGTH_SHORT).show();
-                loadBooks();
-            }
-            @Override
-            public void onError(String error) {
-                Toast.makeText(ExploreActivity.this,
-                        "Không lưu được tiến độ: " + error, Toast.LENGTH_LONG).show();
-            }
-        });
+        if (book.getAudioUrl() == null || book.getAudioUrl().isEmpty()) {
+            Toast.makeText(this, "Nội dung này chưa có file âm thanh!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // 1. Gửi lệnh phát nhạc tới Service
+        Intent serviceIntent = new Intent(this, FonosAudioService.class);
+        serviceIntent.putExtra("audio_url", book.getAudioUrl());
+        serviceIntent.putExtra("title", book.getTitle());
+        serviceIntent.putExtra("author", book.getAuthor());
+        serviceIntent.putExtra("cover_url", book.getCoverUrl());
+        startService(serviceIntent);
+
+        // 2. Mở màn hình Player
+        Intent playerIntent = new Intent(this, PlayerActivity.class);
+        playerIntent.putExtra("cover_url", book.getCoverUrl());
+        startActivity(playerIntent);
     }
 
     // ──────────────────────────────────────────────
